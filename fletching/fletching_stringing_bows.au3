@@ -10,6 +10,10 @@ $check_fail = 0
 ; click speed between 1-3
 $normal_click_speed = Random(1, 3, 1)
 
+; left and right click
+$left = "LEFT"
+$right = "RIGHT"
+
 ; delay between actions
 $veryshort = 0
 $veryshort_wait = Random(200, 350, 1)
@@ -83,14 +87,14 @@ EndFunc
 
 
 ; random left click relative to a square area
-Func _rand_click_left(ByRef $left, ByRef $right, ByRef $top, ByRef $bottom)
+Func _rand_click($click, $left, $right, $top, $bottom, $l_offset=0, $r_offset=0, $t_offset=0, $b_offset=0)
 	; rand x coord in box
-	$rand_x = Random($left, $right, 1)
+	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)
 	; rand y coor in box
-	$rand_y = Random($top, $bottom, 1)
+	$rand_y = Random($top+$t_offset, $bottom+$b_offset, 1)
 
-	; left click
-	MouseClick("LEFT", $rand_x, $rand_y, 1, $normal_click_speed)
+	; click
+	MouseClick($click, $rand_x, $rand_y, 1, $normal_click_speed)
 EndFunc
 
 
@@ -111,11 +115,7 @@ Func _bank()
 	; if found
 	If Not @error Then
 		; click on a random spot around the banker
-		$banker_left = $banker[0]-5
-		$banker_top = $banker[0]+5
-		$banker_right = $banker[1]-5
-		$banker_bottom = $banker[1]+20
-		_rand_click_left($banker_left, $banker_top, $banker_right, $banker_bottom)
+		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -5, 5, -5, 20)
 		; pause while bank opens
 		_pause_action($long)
 
@@ -173,7 +173,7 @@ EndFunc
 
 ; exits the bank using the exit button coord
 Func _exit_bank()
-	_rand_click_left( $close_bank_left, $close_bank_right, $close_bank_top, $close_bank_bottom)
+	_rand_click($left, $close_bank_left, $close_bank_right, $close_bank_top, $close_bank_bottom)
 EndFunc
 
 
@@ -184,12 +184,9 @@ Func _get_string()
 	$rand_x = Random($bank_1_left, $bank_1_right, 1)
 	$rand_y = Random($bank_1_top, $bank_1_bottom, 1)
 
-	$get_x = Random($rand_x-70, $rand_x+70, 1)
-	$get_y = Random($rand_y+70, $rand_y+76, 1)
-
-	MouseClick("RIGHT", $rand_x, $rand_y, 1, $normal_click_speed)
+	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
 	_pause_action($veryshort)
-	MouseClick("LEFT", $get_x, $get_y, 1, $normal_click_speed)
+	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
 EndFunc
 
 
@@ -200,26 +197,23 @@ Func _get_bow()
 	$rand_x = Random($bank_2_left, $bank_2_right, 1)
 	$rand_y = Random($bank_2_top, $bank_2_bottom, 1)
 
-	$get_x = Random($rand_x-70, $rand_x+70, 1)
-	$get_y = Random($rand_y+70, $rand_y+76, 1)
-
-	MouseClick("RIGHT", $rand_x, $rand_y, 1, $normal_click_speed)
+	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
 	_pause_action($veryshort)
-	MouseClick("LEFT", $get_x, $get_y, 1, $normal_click_speed)
+	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
 EndFunc
 
 
 ; deposit all the items in our inventory using the deposit item coord
 Func _deposit_all()
-	_rand_click_left($deposit_left, $deposit_right, $deposit_top, $deposit_bottom)
+	_rand_click($left, $deposit_left, $deposit_right, $deposit_top, $deposit_bottom)
 EndFunc
 
 
 ; combine the first and second item in the inventory using their coordinates
 Func _combine()
-	_rand_click_left($item_1_left, $item_1_right, $item_1_top, $item_1_bottom)
+	_rand_click($left, $item_1_left, $item_1_right, $item_1_top, $item_1_bottom)
 
-	_rand_click_left($item_2_left, $item_2_right, $item_2_top, $item_2_bottom)
+	_rand_click($left, $item_2_left, $item_2_right, $item_2_top, $item_2_bottom)
 EndFunc
 
 
