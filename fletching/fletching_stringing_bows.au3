@@ -157,6 +157,7 @@ Func _bank()
 			$check_fail = $check_fail + 1
 			If $check_fail = 10 Then
 				_exit()
+			EndIf
 		EndIf
 	Else
 		; if we fail 10 times in a row, we stop the program
@@ -185,7 +186,7 @@ Func _get_string()
 	$get_y = Random($rand_y+70, $rand_y+76, 1)
 
 	MouseClick("RIGHT", $rand_x, $rand_y, 1, $normal_click_speed)
-	_pause_action($very_short)
+	_pause_action($veryshort)
 	MouseClick("LEFT", $get_x, $get_y, 1, $normal_click_speed)
 EndFunc
 
@@ -201,7 +202,7 @@ Func _get_bow()
 	$get_y = Random($rand_y+70, $rand_y+76, 1)
 
 	MouseClick("RIGHT", $rand_x, $rand_y, 1, $normal_click_speed)
-	_pause_action($very_short)
+	_pause_action($veryshort)
 	MouseClick("LEFT", $get_x, $get_y, 1, $normal_click_speed)
 EndFunc
 
