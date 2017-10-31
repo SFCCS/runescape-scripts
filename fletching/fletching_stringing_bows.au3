@@ -129,16 +129,16 @@ EndFunc
 ; 9 --> goto --> 1
 Func _bank()
 	; Use pixel color search to find the banker
-	$banker = PixelSearch(247, 63, 661, 307, 0x605409)
+	$banker = PixelSearch(237, 43, 701, 407, 0x605409)
 	; check if the color pixels relative to the banker coords are what we want to make sure we click
 	; on the correct object
-	$banker_cloth1 = PixelSearch($banker[0]-30, $banker[1]-30, $banker[0]+30, $banker[1]+30, 0xE3E0E3)
-	$banker_cloth2 = PixelSearch($banker[0]-30, $banker[1]-30, $banker[0]+30, $banker[1]+30, 0x847A7A)
+	$banker_cloth1 = PixelSearch($banker[0]-50, $banker[1]-50, $banker[0]+50, $banker[1]+50, 0xE3E0E3)
+	$banker_cloth2 = PixelSearch($banker[0]-50, $banker[1]-50, $banker[0]+50, $banker[1]+50, 0x847A7A)
 
 	; if found
 	If IsArray($banker) AND IsArray($banker_cloth1) AND IsArray($banker_cloth2) Then
 		; click on a random spot around the banker
-		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -5, 5, -5, 20)
+		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -10, 10, -10, 40)
 		; pause while bank opens
 		_pause_action($long)
 
