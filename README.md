@@ -14,9 +14,9 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 #### Fletching Stringing Bows
 
-| Action                                     | Time Tested | Experience Gained |
-|--------------------------------------------|-------------|-------------------|
-| Fletches strings any type of unstrung bows | 22 hours+   | 4 mil+            |
+| Action                            | Time Tested | Experience Gained |
+|-----------------------------------|-------------|-------------------|
+| Strings any type of unstrung bows | 22 hours+   | 4 mil+            |
 
 #### Fletching Headless Arrows
 
