@@ -12,13 +12,13 @@ $normal_click_speed = Random(1, 3, 1)
 
 ; delay between actions
 $veryshort = 0
-$veryshort_wait = Random(200, 300, 1)
+$veryshort_wait = Random(200, 350, 1)
 $short = 1
 $short_wait = Random(500, 700, 1)
 $long = 2
-$long_wait = Random(700, 1000, 1)
+$long_wait = Random(800, 1000, 1)
 $make = 3
-$make_wait = Random(16800, 17200, 1)
+$make_wait = Random(16800, 17300, 1)
 
 ; coords for closing bank
 $close_bank_left = 573
