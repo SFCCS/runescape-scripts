@@ -5,6 +5,11 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 > Additional information about the scripts will be adding upon furthor testing.
 
+### Notes:
+1. Screen Resolution: 1920 x 1080
+2. OSBuddy as client
+3. Client resized to half screen
+
 ## Fletching
 
 #### Fletching Stringing Bows
