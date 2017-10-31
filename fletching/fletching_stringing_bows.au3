@@ -70,7 +70,9 @@ WEnd
 
 ; determine which pause we want
 Func _pause_action(ByRef $length)
-	If $length = 1 Then
+	If $length = 0 Then
+		Sleep($veryshort_wait)
+	ElseIf $length = 1 Then
 		Sleep($short_wait)
 	ElseIf $length = 2 Then
 		Sleep($long_wait)
