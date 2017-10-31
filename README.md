@@ -16,7 +16,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained |
 |-----------------------------------|-------------|-------------------|
-| Strings any type of unstrung bows | 22 hours+   | 4 mil+            |
+| Strings any type of unstrung bows | 40 hours+   | 6 mil+            |
 
 #### Fletching Headless Arrows
 
