@@ -98,6 +98,25 @@ Func _rand_click($click, $left, $right, $top, $bottom, $l_offset=0, $r_offset=0,
 EndFunc
 
 
+; increment the error and checks if the program has failed
+Func _increment_error()
+	; if we fail 10 times in a row, we stop the program
+	$check_fail += 1
+
+	If $check_fail = 10 Then
+		_exit()
+	EndIf
+EndFunc
+
+
+Func _reset_error()
+	; reset the fail checker since it fixed itself
+	If $check_fail = 3 Then
+		$check_fail = 0
+	EndIf
+EndFunc
+
+
 ; bank first
 ; 1 --> click banker
 ; 2 --> deposit items
@@ -111,9 +130,13 @@ EndFunc
 Func _bank()
 	; Use pixel color search to find the banker
 	$banker = PixelSearch(247, 63, 661, 307, 0x605409)
+	; check if the color pixels relative to the banker coords are what we want to make sure we click
+	; on the correct object
+	$banker_cloth1 = PixelSearch($banker[0]-30, $banker[1]-30, $banker[0]+30, $banker[1]+30, 0xE3E0E3)
+	$banker_cloth2 = PixelSearch($banker[0]-30, $banker[1]-30, $banker[0]+30, $banker[1]+30, 0x847A7A)
 
 	; if found
-	If Not @error Then
+	If IsArray($banker) AND IsArray($banker_cloth1) AND IsArray($banker_cloth2) Then
 		; click on a random spot around the banker
 		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -5, 5, -5, 20)
 		; pause while bank opens
@@ -125,48 +148,16 @@ Func _bank()
 
 		; if item is there
 		If Not @error Then
-			; reset the fail checker since it fixed itself
-			If $check_fail = 3 Then
-				$check_fail = 0
-			EndIf
+			; if the script fixes itself, we can reset error
+			_reset_error()
 
-			; deposit all items first then delay
-			_deposit_all()
-			_pause_action($short)
-
-			; get the first item then delay
-			_get_string()
-			_pause_action($short)
-
-			; get the second item then delay
-			_get_bow()
-			_pause_action($short)
-
-			; exit bank then delay
-			_exit_bank()
-			_pause_action($long)
-
-			; combine the item then delay
-			_combine()
-			_pause_action($long)
-
-			; make the item and pause for a longer period while item is being made
-			_make()
-			_pause_action($make)
-			_pause_action($long)
+			; does all the actions we need
+			_doAll()
 		Else
-			; if we fail 10 times in a row, we stop the program
-			$check_fail = $check_fail + 1
-			If $check_fail = 10 Then
-				_exit()
-			EndIf
+			_increment_error()
 		EndIf
 	Else
-		; if we fail 10 times in a row, we stop the program
-		$check_fail = $check_fail + 1
-		If $check_fail = 10 Then
-			_exit()
-		EndIf
+		_increment_error()
 	EndIf
 EndFunc
 
@@ -214,6 +205,35 @@ Func _combine()
 	_rand_click($left, $item_1_left, $item_1_right, $item_1_top, $item_1_bottom)
 
 	_rand_click($left, $item_2_left, $item_2_right, $item_2_top, $item_2_bottom)
+EndFunc
+
+
+; does all the actions we need
+Func _doAll()
+	; deposit all items first then delay
+	_deposit_all()
+	_pause_action($short)
+
+	; get the first item then delay
+	_get_string()
+	_pause_action($short)
+
+	; get the second item then delay
+	_get_bow()
+	_pause_action($short)
+
+	; exit bank then delay
+	_exit_bank()
+	_pause_action($long)
+
+	; combine the item then delay
+	_combine()
+	_pause_action($long)
+
+	; make the item and pause for a longer period while item is being made
+	_make()
+	_pause_action($make)
+	_pause_action($long)
 EndFunc
 
 

@@ -16,6 +16,4 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 > Has not left the intended spot and ran away to do crazy broken bot stuff.
 
-> Will add more advanced pixel color checking later on.
-
 > Will add logging in functionality later on.
