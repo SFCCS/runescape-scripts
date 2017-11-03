@@ -14,9 +14,15 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 #### Fletching Stringing Bows
 
-| Action                            | Time Tested | Experience Gained |
-|-----------------------------------|-------------|-------------------|
-| Strings any type of unstrung bows | 70 hours+   | 10 mil+            |
+| Action                            | Time Tested | Experience Gained | Achievements|
+|-----------------------------------|-------------|-------------------|-------------|
+| Strings any type of unstrung bows | 85 hours+   | 13 mil+           | Level 99 x1 |
+
+---
+
+| Item            | Experience Rates |
+|-----------------|------------------|
+| Yew Longbow (u) | ~158k exp/hr Avg |
 
 #### Fletching Headless Arrows
 

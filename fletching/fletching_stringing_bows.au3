@@ -203,7 +203,7 @@ EndFunc
 ; combine the first and second item in the inventory using their coordinates
 Func _combine()
 	_rand_click($left, $item_1_left, $item_1_right, $item_1_top, $item_1_bottom)
-
+	_pause_action($veryshort)
 	_rand_click($left, $item_2_left, $item_2_right, $item_2_top, $item_2_bottom)
 EndFunc
 
