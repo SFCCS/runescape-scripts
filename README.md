@@ -32,8 +32,6 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 |-----------------------------------|-------------|-------------------|-------------|
 | Strings any type of unstrung bows | 85 hours+   | 13 mil+           | Level 99 x1 |
 
----
-
 | Item            | Experience Rates |
 |-----------------|------------------|
 | Yew Longbow (u) | ~158k exp/hr Avg |
