@@ -26,7 +26,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 ## Fletching
 
-#### Fletching Stringing Bows
+### Fletching - Stringing Bows
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
@@ -38,7 +38,9 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 |-----------------|------------------|
 | Yew Longbow (u) | ~158k exp/hr Avg |
 
-#### Fletching Headless Arrows
+---
+
+### Fletching - Headless Arrows
 
 | Action                                                     | Time Tested | Experience Gained |
 |------------------------------------------------------------|-------------|-------------------|
