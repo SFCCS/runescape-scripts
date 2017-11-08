@@ -38,11 +38,23 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 ---
 
+### Fletching - Logs to Unstrung Bows
+
+| Action                            | Time Tested | Experience Gained | Achievements|
+|-----------------------------------|-------------|-------------------|-------------|
+| Cuts logs into unstrung bows | 1 hours+   | 90 k+           |  |
+
+| Item            | Experience Rates |
+|-----------------|------------------|
+| Willow Logs | ~71k exp/hr Avg |
+
+---
+
 ### Fletching - Headless Arrows
 
 | Action                                                     | Time Tested | Experience Gained |
 |------------------------------------------------------------|-------------|-------------------|
-| Combines feathers and arrow shafts to make headless arrows | 1 hours+    | 37,000+           |
+| Combines feathers and arrow shafts to make headless arrows | 3 hours+    | 70,000+           |
 
 ## Cooking
 
