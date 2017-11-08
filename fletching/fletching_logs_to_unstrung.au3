@@ -54,7 +54,16 @@ WEnd
 
 
 
-; start by banking bank
+; bank first
+; 1 --> click banker
+; 2 --> deposit items
+; 3 --> get 1 item from slot 1
+; 4 --> get 27 items from slot 2
+; 5 --> close bank
+; 6 --> click item 1
+; 7 --> click item 2
+; 8 --> combine them
+; 9 --> goto --> 1
 Func _start()
 
 	; find banker

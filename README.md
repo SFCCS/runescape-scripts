@@ -24,7 +24,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 2. OSBuddy as client
 3. Client resized to half screen
 
-## Fletching
+# Fletching
 
 ### Fletching - Stringing Bows
 
@@ -42,7 +42,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cuts logs into unstrung bows | 1 hours+   | 90 k+           |  |
+| Cuts logs into unstrung bows      | 1 hours+    | 90 k+             |             |
 
 | Item            | Experience Rates |
 |-----------------|------------------|
@@ -56,7 +56,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 |------------------------------------------------------------|-------------|-------------------|
 | Combines feathers and arrow shafts to make headless arrows | 3 hours+    | 70,000+           |
 
-## Cooking
+# Cooking
 
 ### Cooking - Making Unfermented Wines
 

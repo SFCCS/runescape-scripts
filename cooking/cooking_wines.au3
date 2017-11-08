@@ -4,117 +4,54 @@ WinActivate("OSBuddy")
 ; hot key to stop
 HotKeySet("{Esc}", "_exit")
 
-; error checking to prevent script freaking out
-$check_fail = 0
+; error tracker
+$error_count = 0
 
-; click speed between 1-3
-$normal_click_speed = Random(1, 3, 1)
+; delay between actions
+$veryshort = 1
+$short = 2
+$long = 3
+$make = 4
 
 ; left and right click
 $left = "LEFT"
 $right = "RIGHT"
 
-; delay between actions
-$veryshort = 0
-$veryshort_wait = Random(200, 350, 1)
-$short = 1
-$short_wait = Random(500, 700, 1)
-$long = 2
-$long_wait = Random(800, 1000, 1)
-$make = 3
-$make_wait = Random(16800, 17300, 1)
+; close bank
+$close_left = 573
+$close_top = 75
 
-; coords for closing bank
-$close_bank_left = 573
-$close_bank_right = 589
-$close_bank_top = 75
-$close_bank_bottom = 91
+; deposit items
+$deposit_left = 525
+$deposit_top = 828
 
-; first slot of bank
-$bank_1_left = 170
-$bank_1_right = 196
-$bank_1_top = 144
-$bank_1_bottom = 170
+; bank slot 1
+$bs1_left = 170
+$bs1_top = 144
 
-; second slot of bank
-$bank_2_left = 218
-$bank_2_right = 244
-$bank_2_top = 144
-$bank_2_bottom = 170
+; bank slot 2
+$bs2_left = 218
+$bs2_top = 144
 
-; deposit button
-$deposit_left = 524
-$deposit_right = 551
-$deposit_top = 827
-$deposit_bottom = 854
+; inventory slot 1
+$is1_left = 795
+$is1_top = 861
 
-; first inv item
-$item_1_left = 795
-$item_1_right = 815
-$item_1_top = 861
-$item_1_bottom = 884
-
-; second inv item
-$item_2_left = 794
-$item_2_right = 816
-$item_2_top = 893
-$item_2_bottom = 921
+; inventory slot 2
+$is2_left = 793
+$is2_top = 893
 
 
 
 
-
-; run program until we stop it using esc
-While 1
-	_bank()
+; run program until we stop it using esc or encounter an error
+while 1
+	; start the problem
+	_start()
 WEnd
 
 
 
-
-; determine which pause we want
-Func _pause_action(ByRef $length)
-	If $length = 0 Then
-		Sleep($veryshort_wait)
-	ElseIf $length = 1 Then
-		Sleep($short_wait)
-	ElseIf $length = 2 Then
-		Sleep($long_wait)
-	Else
-		Sleep($make_wait)
-	EndIf
-EndFunc
-
-
-; random left click relative to a square area
-Func _rand_click($click, $left, $right, $top, $bottom, $l_offset=0, $r_offset=0, $t_offset=0, $b_offset=0)
-	; rand x coord in box
-	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)
-	; rand y coor in box
-	$rand_y = Random($top+$t_offset, $bottom+$b_offset, 1)
-
-	; click
-	MouseClick($click, $rand_x, $rand_y, 1, $normal_click_speed)
-EndFunc
-
-
-; increment the error and checks if the program has failed
-Func _increment_error()
-	; if we fail 10 times in a row, we stop the program
-	$check_fail += 1
-
-	If $check_fail = 10 Then
-		_exit()
-	EndIf
-EndFunc
-
-
-Func _reset_error()
-	; reset the fail checker since it fixed itself
-	If $check_fail = 3 Then
-		$check_fail = 0
-	EndIf
-EndFunc
 
 
 ; bank first
@@ -127,118 +64,153 @@ EndFunc
 ; 7 --> click item 2
 ; 8 --> combine them
 ; 9 --> goto --> 1
-Func _bank()
-	; Use pixel color search to find the banker
-	$banker = PixelSearch(237, 43, 701, 407, 0x7A7287)
-	; check if the color pixels relative to the banker coords are what we want to make sure we click
-	; on the correct object
-	$banker_cloth1 = PixelSearch($banker[0]-150, $banker[1]-150, $banker[0]+150, $banker[1]+50, 0x4C4646)
-	;$banker_cloth2 = PixelSearch($banker[0]-150, $banker[1]-150, $banker[0]+150, $banker[1]+50, 0x6F5D26)
+Func _start()
 
-	; if found
+	; find banker
+	$banker = PixelSearch(253, 64, 739, 268, 0x7D768D)
+	; if found then bank and do other actions
 	If IsArray($banker) Then
-		; click on a random spot around the banker
-		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -10, 10, -10, 20)
-		; pause while bank opens
+		; since no error we can set error to none
+		; this is also in the case program fixed itself
+		_reset_error()
+
+		; click on the banker then wait for bank to open
+		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -15, 20, -15, 20)
+		_pause_action($short)
+
+		; deposit all items into the bank
+		_deposit_all()
+		_pause_action($short)
+
+		; grab the jugs of water
+		_get_jugs()
+		_pause_action($veryshort)
+
+		; grab the grapes
+		_get_grapes()
+		_pause_action($short)
+
+		; exit the bank to make wines
+		_exit_bank()
+		_pause_action($short)
+
+		; select the jugs of water
+		_select_first()
+		_pause_action($veryshort)
+
+		; select the grapes
+		_select_second()
 		_pause_action($long)
 
-		; pixel search the color of the first item to make sure we
-		; did not run out of the first item
-		$string = PixelSearch(173, 150, 192, 166, 0x610543)
-
-		; if item is there
-		If Not @error Then
-			; if the script fixes itself, we can reset error
-			_reset_error()
-
-			; does all the actions we need
-			_doAll()
-		Else
-			_increment_error()
-		EndIf
+		; cut the logs to unstrung bows
+		_combine()
+		_pause_action($make)
 	Else
+		; if error occurs 10 times then we exit
 		_increment_error()
 	EndIf
 EndFunc
 
 
-; exits the bank using the exit button coord
-Func _exit_bank()
-	_rand_click($left, $close_bank_left, $close_bank_right, $close_bank_top, $close_bank_bottom)
+; randomly selects the first item to combine with second
+Func _select_first()
+	_rand_click($left, $is1_left, $is1_left, $is1_top, $is1_top, 0, 20, 0, 20)
 EndFunc
 
 
-; gets the string from our second bank slot
-; this combines right click then left click
-; right click is used to select the number of items we want
-Func _get_grapes()
-	$rand_x = Random($bank_1_left, $bank_1_right, 1)
-	$rand_y = Random($bank_1_top, $bank_1_bottom, 1)
-
-	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
-	_pause_action($veryshort)
-	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
+; randomly selects the second item to combine with first
+Func _select_second()
+	_rand_click($left, $is2_left, $is2_left, $is2_top, $is2_top, 0, 20, 0, 20)
 EndFunc
 
 
-; gets the bow from our second bank slot
-; this combines right click then left click
-; right click is used to select the number of items we want
+; grabs the jugs of water from the bank
 Func _get_jugs()
-	$rand_x = Random($bank_2_left, $bank_2_right, 1)
-	$rand_y = Random($bank_2_top, $bank_2_bottom, 1)
+	$rand_x = Random($bs1_left, $bs1_left+20, 1)
+	$rand_y = Random($bs1_top, $bs1_top+20, 1)
 
+	; right click to have grab many option
 	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
 	_pause_action($veryshort)
+	; left click to select X amount wanted
 	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
 EndFunc
 
 
-; deposit all the items in our inventory using the deposit item coord
-Func _deposit_all()
-	_rand_click($left, $deposit_left, $deposit_right, $deposit_top, $deposit_bottom)
-EndFunc
+; grabs X amount of grapes from the bank
+Func _get_grapes()
+	$rand_x = Random($bs2_left, $bs2_left+20, 1)
+	$rand_y = Random($bs2_top, $bs2_top+20, 1)
 
-
-; combine the first and second item in the inventory using their coordinates
-Func _combine()
-	_rand_click($left, $item_1_left, $item_1_right, $item_1_top, $item_1_bottom)
+	; right click to have grab many option
+	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
 	_pause_action($veryshort)
-	_rand_click($left, $item_2_left, $item_2_right, $item_2_top, $item_2_bottom)
+	; left click to select X amount wanted
+	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
 EndFunc
 
 
-; does all the actions we need
-Func _doAll()
-	; deposit all items first then delay
-	_deposit_all()
-	_pause_action($short)
-
-	; get the first item then delay
-	_get_grapes()
-	_pause_action($short)
-
-	; get the second item then delay
-	_get_jugs()
-	_pause_action($short)
-
-	; exit bank then delay
-	_exit_bank()
-	_pause_action($long)
-
-	; combine the item then delay
-	_combine()
-	_pause_action($long)
-
-	; make the item and pause for a longer period while item is being made
-	_make()
-	_pause_action($make)
-	_pause_action($long)
+; deposits all items to bank
+Func _deposit_all()
+	_rand_click($left, $deposit_left, $deposit_left, $deposit_top, $deposit_top, 0, 20, 0, 20)
 EndFunc
 
 
-; press space as a shortcut to make all the items in our inv
-Func _make()
+; exits the bank
+Func _exit_bank()
+	_rand_click($left, $close_left, $close_left, $close_top, $close_top, 0, 13, 0, 15)
+EndFunc
+
+
+; increment error everytime something bad happens
+; if error occurs 10 times we exit program
+Func _increment_error()
+	$error_count += 1
+
+	If $error_count = 10 Then
+		_exit()
+	EndIf
+EndFunc
+
+
+; reset error
+Func _reset_error()
+	$error_count = 0
+EndFunc
+
+
+; random left click relative to a square area
+Func _rand_click($click, $left, $right, $top, $bottom, $l_offset=0, $r_offset=0, $t_offset=0, $b_offset=0)
+	; random click speed between 2-4
+	$normal_click_speed = Random(2, 4, 1)
+
+	; rand x coord in box
+	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)
+	; rand y coor in box
+	$rand_y = Random($top+$t_offset, $bottom+$b_offset, 1)
+
+	; click
+	MouseClick($click, $rand_x, $rand_y, 1, $normal_click_speed)
+EndFunc
+
+
+; determine which pause we want
+Func _pause_action($length)
+	; delay between actions
+	If $length = 1 Then
+		Sleep(Random(200, 350, 1))
+	ElseIf $length = 2 Then
+		Sleep(Random(680, 700, 1))
+	ElseIf $length = 3 Then
+		Sleep(Random(1050, 1100, 1))
+	Else
+		Sleep(Random(16800, 17300, 1))
+	EndIf
+EndFunc
+
+
+; press key as a shortcut to make all the items in our inv
+Func _combine()
 	Send("{Space}")
 EndFunc
 
