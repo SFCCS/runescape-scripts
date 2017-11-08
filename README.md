@@ -43,3 +43,15 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 | Action                                                     | Time Tested | Experience Gained |
 |------------------------------------------------------------|-------------|-------------------|
 | Combines feathers and arrow shafts to make headless arrows | 1 hours+    | 37,000+           |
+
+## Cooking
+
+### Cooking - Making Unfermented Wines
+
+| Action                            | Time Tested | Experience Gained | Achievements|
+|-----------------------------------|-------------|-------------------|-------------|
+| Combining grapes and jugs of water to make wines | 30 hours+   | 13 mil+           | Level 99 x1 |
+
+| Item            | Experience Rates |
+|-----------------|------------------|
+| Unfermented Wine | ~421k exp/hr Avg |
