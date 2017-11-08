@@ -94,7 +94,7 @@ Func _pause_action($length)
 	ElseIf $length = 3 Then
 		Sleep(Random(1050, 1100, 1))
 	Else
-		Sleep(Random(16800, 17300, 1))
+		Sleep(Random(11950, 12300, 1))
 	EndIf
 EndFunc
 
