@@ -84,7 +84,6 @@ Func _start()
 
 		; check if bank is open
 		_check_bank_open()
-		_pause_action($veryshort)
 
 		; deposit all items into the bank
 		_deposit_all()
@@ -279,7 +278,7 @@ EndFunc
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(200, 350, 1))
+		Sleep(Random(150, 250, 1))
 	ElseIf $length = 2 Then
 		Sleep(Random(680, 700, 1))
 	ElseIf $length = 3 Then
