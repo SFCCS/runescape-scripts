@@ -100,14 +100,24 @@ Func _start()
 
 		; exit the bank to string bows
 		_exit_bank()
+
+		; make sure bank is closed
+		_check_bank_closed()
+
+		; make sure our first inventory item is rendered
+		_check_inv_1()
 		_pause_action($veryshort)
 
-		; select the string
+		; select the first inventory item
 		_select_first()
 		_pause_action($veryshort)
 
+		; make sure the second inventory item is rendered
+		_check_inv_2()
+
 		; select unstrung bow to string
 		_select_second()
+		_pause_action($veryshort)
 
 		; check for combine action
 		_check_combine()
@@ -120,6 +130,42 @@ Func _start()
 		; if error occurs 10 times then we exit
 		_increment_error()
 	EndIf
+EndFunc
+
+
+; check bank closed
+Func _check_bank_closed()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(362, 230, 457, 309, 0x574815)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
+
+
+; check inv item 1 rendered
+Func _check_inv_1()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(796, 867, 815, 885, 0x837758)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
+
+
+; check inv item 2 rendered
+Func _check_inv_2()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(838, 893, 858, 914, 0xC8AF18)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
 EndFunc
 
 
