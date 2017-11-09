@@ -67,3 +67,15 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 | Item            | Experience Rates |
 |-----------------|------------------|
 | Unfermented Wine | ~421k exp/hr Avg |
+
+# Herblore
+
+### Herblore - Cleaning Herbs
+
+| Action                            | Time Tested | Experience Gained | Achievements|
+|-----------------------------------|-------------|-------------------|-------------|
+| Cleaning herbs                    | 3 hours+    | 100 k+            |             |
+
+
+
+

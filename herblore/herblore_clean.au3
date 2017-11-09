@@ -34,17 +34,26 @@ $deposit_top = 828
 $bs1_left = 170
 $bs1_top = 144
 
-; bank slot 2
-$bs2_left = 218
-$bs2_top = 144
 
-; inventory slot 1
-$is1_left = 795
-$is1_top = 861
 
-; inventory slot 2
-$is2_left = 793
-$is2_top = 893
+$c1 = 755
+$c2 = 795
+$c3 = 835
+$c4 = 875
+
+
+$r1 = 755
+$r2 = 790
+$r3 = 825
+$r4 = 860
+$r5 = 895
+$r6 = 930
+$r7 = 965
+
+
+
+
+
 
 
 
@@ -80,42 +89,127 @@ Func _start()
 		_reset_error()
 
 		; click on the banker then wait for bank to open
-		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -30, 30, -35, 40)
-
-		; check if bank is open
-		_check_bank_open()
-		_pause_action($veryshort)
+		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -15, 20, -15, 20)
+		_pause_action($short)
 
 		; deposit all items into the bank
 		_deposit_all()
 		_pause_action($veryshort)
 
 		; grab the string
-		_get_strings()
-		_pause_action($veryshort)
-
-		; grab the unstrung bows
-		_get_bows()
+		_get_herbs()
 		_pause_action($veryshort)
 
 		; exit the bank to string bows
 		_exit_bank()
 		_pause_action($veryshort)
 
-		; select the string
-		_select_first()
-		_pause_action($veryshort)
+		; 1
+		_rand_click($left, $c1, $c1, $r1, $r1, 0, 20, 0, 20)
 
-		; select unstrung bow to string
-		_select_second()
+		; 2
+		_rand_click($left, $c2, $c2, $r1, $r1, 0, 20, 0, 20)
 
-		; check for combine action
-		_check_combine()
-		_pause_action($veryshort)
+		; 3
+		_rand_click($left, $c3, $c3, $r1, $r1, 0, 20, 0, 20)
 
-		; string the bows
-		_combine()
-		_pause_action($make)
+		; 4
+		_rand_click($left, $c4, $c4, $r1, $r1, 0, 20, 0, 20)
+
+
+
+		; 8
+		_rand_click($left, $c4, $c4, $r2, $r2, 0, 20, 0, 20)
+
+		; 7
+		_rand_click($left, $c3, $c3, $r2, $r2, 0, 20, 0, 20)
+
+		; 6
+		_rand_click($left, $c2, $c2, $r2, $r2, 0, 20, 0, 20)
+
+		; 5
+		_rand_click($left, $c1, $c1, $r2, $r2, 0, 20, 0, 20)
+
+
+
+
+
+		; 9
+		_rand_click($left, $c1, $c1, $r3, $r3, 0, 20, 0, 20)
+
+		; 10
+		_rand_click($left, $c2, $c2, $r3, $r3, 0, 20, 0, 20)
+
+		; 11
+		_rand_click($left, $c3, $c3, $r3, $r3, 0, 20, 0, 20)
+
+		; 12
+		_rand_click($left, $c4, $c4, $r3, $r3, 0, 20, 0, 20)
+
+
+
+
+
+		; 16
+		_rand_click($left, $c4, $c4, $r4, $r4, 0, 20, 0, 20)
+
+		; 15
+		_rand_click($left, $c3, $c3, $r4, $r4, 0, 20, 0, 20)
+
+		; 14
+		_rand_click($left, $c2, $c2, $r4, $r4, 0, 20, 0, 20)
+
+		; 13
+		_rand_click($left, $c1, $c1, $r4, $r4, 0, 20, 0, 20)
+
+
+
+
+
+
+		; 17
+		_rand_click($left, $c1, $c1, $r5, $r5, 0, 20, 0, 20)
+
+		; 18
+		_rand_click($left, $c2, $c2, $r5, $r5, 0, 20, 0, 20)
+
+		; 19
+		_rand_click($left, $c3, $c3, $r5, $r5, 0, 20, 0, 20)
+
+		; 20
+		_rand_click($left, $c4, $c4, $r5, $r5, 0, 20, 0, 20)
+
+
+
+
+		; 24
+		_rand_click($left, $c4, $c4, $r6, $r6, 0, 20, 0, 20)
+
+		; 23
+		_rand_click($left, $c3, $c3, $r6, $r6, 0, 20, 0, 20)
+
+		; 22
+		_rand_click($left, $c2, $c2, $r6, $r6, 0, 20, 0, 20)
+
+		; 21
+		_rand_click($left, $c1, $c1, $r6, $r6, 0, 20, 0, 20)
+
+
+
+		; 25
+		_rand_click($left, $c1, $c1, $r7, $r7, 0, 20, 0, 20)
+
+		; 26
+		_rand_click($left, $c2, $c2, $r7, $r7, 0, 20, 0, 20)
+
+		; 27
+		_rand_click($left, $c3, $c3, $r7, $r7, 0, 20, 0, 20)
+
+		; 28
+		_rand_click($left, $c4, $c4, $r7, $r7, 0, 20, 0, 20)
+
+
+		_pause_action($long)
 	Else
 		; if error occurs 10 times then we exit
 		_increment_error()
@@ -123,44 +217,8 @@ Func _start()
 EndFunc
 
 
-; checks if bank is open
-Func _check_bank_open()
-	$check = 1
-	while $check
-		$check_item = PixelSearch(171, 148, 196, 168, 0x70664C)
-		If IsArray($check_item) Then
-			$check = 0
-		EndIf
-	WEnd
-EndFunc
-
-
-; check for combine action
-Func _check_combine()
-	$check = 1
-	while $check
-		$check_item = PixelSearch(245, 936, 291, 977, 0xA59015)
-		If IsArray($check_item) Then
-			$check = 0
-		EndIf
-	WEnd
-EndFunc
-
-
-; randomly selects the first item to combine with second
-Func _select_first()
-	_rand_click($left, $is1_left, $is1_left, $is1_top, $is1_top, 0, 20, 0, 20)
-EndFunc
-
-
-; randomly selects the second item to combine with first
-Func _select_second()
-	_rand_click($left, $is2_left, $is2_left, $is2_top, $is2_top, 0, 20, 0, 20)
-EndFunc
-
-
-; grabs X amount of strings from the bank
-Func _get_strings()
+; grabs X amount of herbs from the bank
+Func _get_herbs()
 	$rand_x = Random($bs1_left, $bs1_left+20, 1)
 	$rand_y = Random($bs1_top, $bs1_top+20, 1)
 
@@ -172,17 +230,6 @@ Func _get_strings()
 EndFunc
 
 
-; grabs X amount of bows from the bank
-Func _get_bows()
-	$rand_x = Random($bs2_left, $bs2_left+20, 1)
-	$rand_y = Random($bs2_top, $bs2_top+20, 1)
-
-	; right click to have grab many option
-	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
-	_pause_action($veryshort)
-	; left click to select X amount wanted
-	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
-EndFunc
 
 
 ; deposits all items to bank
@@ -217,7 +264,7 @@ EndFunc
 ; random left click relative to a square area
 Func _rand_click($click, $left, $right, $top, $bottom, $l_offset=0, $r_offset=0, $t_offset=0, $b_offset=0)
 	; random click speed between 2-4
-	$normal_click_speed = Random(2, 4, 1)
+	$normal_click_speed = Random(2, 6, 1)
 
 	; rand x coord in box
 	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)
