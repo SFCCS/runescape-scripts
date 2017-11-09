@@ -32,9 +32,10 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 |-----------------------------------|-------------|-------------------|-------------|
 | Strings any type of unstrung bows | 85 hours+   | 14 mil+           | Level 99 x1 |
 
-| Item            | Experience Rates |
-|-----------------|------------------|
-| Yew Longbow (u) | ~180k exp/hr Avg |
+| Item             | Experience Rates |
+|------------------|------------------|
+| Maple Longbow (u)| ~130k exp/hr Avg |
+| Yew Longbow (u)  | ~185k exp/hr Avg |
 
 ---
 
@@ -42,11 +43,12 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cuts logs into unstrung bows      | 1 hours+    | 90 k+             |             |
+| Cuts logs into unstrung bows      | 6 hours+    | 500 k+            |             |
 
 | Item            | Experience Rates |
 |-----------------|------------------|
-| Willow Logs | ~71k exp/hr Avg |
+| Willow Logs     | ~71k exp/hr Avg  |
+| Maple logs      | ~105k exp/hr Avg |
 
 ---
 
@@ -60,9 +62,9 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 ### Cooking - Making Unfermented Wines
 
-| Action                            | Time Tested | Experience Gained | Achievements|
-|-----------------------------------|-------------|-------------------|-------------|
-| Combining grapes and jugs of water to make wines | 30 hours+   | 13 mil+           | Level 99 x1 |
+| Action                            | Time Tested  | Experience Gained | Achievements|
+|-----------------------------------|--------------|-------------------|-------------|
+| Combining grapes and jugs of water to make wines | 30 hours+ | 13 mil+ | Level 99 x1 |
 
 | Item            | Experience Rates |
 |-----------------|------------------|
@@ -74,7 +76,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 3 hours+    | 100 k+            |             |
+| Cleaning herbs                    | 5 hours+    | 250 k+            |             |
 
 
 

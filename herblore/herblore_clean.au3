@@ -1,8 +1,3 @@
-; willow logs 3 hours
-; maple logs 4 hours ~101k, 400kexp
-; maple longbow (u), 2 hours, 250k, ~ 125k/hr
-
-
 ; target window
 WinActivate("OSBuddy")
 
@@ -90,18 +85,28 @@ Func _start()
 
 		; click on the banker then wait for bank to open
 		_rand_click($left, $banker[0], $banker[0], $banker[1], $banker[1], -15, 20, -15, 20)
-		_pause_action($short)
+
+
+		; check if bank is open
+		_check_bank_open()
 
 		; deposit all items into the bank
 		_deposit_all()
 		_pause_action($veryshort)
 
+
 		; grab the string
 		_get_herbs()
 		_pause_action($veryshort)
 
-		; exit the bank to string bows
+		; exit the bank to clean herbs
 		_exit_bank()
+
+		; make sure the bank is closed
+		_check_bank_closed()
+
+		; make sure inventory item is rendered
+		_check_inv_1()
 		_pause_action($veryshort)
 
 		; 1
@@ -209,13 +214,36 @@ Func _start()
 		_rand_click($left, $c4, $c4, $r7, $r7, 0, 20, 0, 20)
 
 
-		_pause_action($long)
+		_pause_action($short)
 	Else
 		; if error occurs 10 times then we exit
 		_increment_error()
 	EndIf
 EndFunc
 
+
+; check bank closed
+Func _check_bank_closed()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(362, 230, 457, 309, 0x574815)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
+
+
+; check inv item 1 rendered
+Func _check_inv_1()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(796, 867, 815, 885, 0x514209)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
 
 ; grabs X amount of herbs from the bank
 Func _get_herbs()
@@ -230,6 +258,16 @@ Func _get_herbs()
 EndFunc
 
 
+; checks if bank is open
+Func _check_bank_open()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(171, 148, 196, 168, 0x514209)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
 
 
 ; deposits all items to bank
@@ -264,7 +302,7 @@ EndFunc
 ; random left click relative to a square area
 Func _rand_click($click, $left, $right, $top, $bottom, $l_offset=0, $r_offset=0, $t_offset=0, $b_offset=0)
 	; random click speed between 2-4
-	$normal_click_speed = Random(2, 6, 1)
+	$normal_click_speed = Random(2, 4, 1)
 
 	; rand x coord in box
 	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)

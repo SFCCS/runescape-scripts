@@ -1,8 +1,3 @@
-; willow logs 3 hours
-; maple logs 4 hours ~101k, 400kexp
-; maple longbow (u), 2 hours, 250k, ~ 125k/hr
-
-
 ; target window
 WinActivate("OSBuddy")
 
