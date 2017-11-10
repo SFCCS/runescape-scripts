@@ -76,7 +76,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 5 hours+    | 250 k+            |             |
+| Cleaning herbs                    | 8 hours+    | 550 k+            |             |
 
 
 

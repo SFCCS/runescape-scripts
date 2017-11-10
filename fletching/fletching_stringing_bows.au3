@@ -4,6 +4,10 @@ WinActivate("OSBuddy")
 ; hot key to stop
 HotKeySet("{Esc}", "_exit")
 
+; hot key to pause
+HotKeySet("{`}", "_pause")
+$pause = False
+
 ; error tracker
 $error_count = 0
 
@@ -138,6 +142,17 @@ Func _check_bank_closed()
 	WEnd
 EndFunc
 
+; checks if bank is open
+Func _check_bank_open()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(171, 148, 196, 168, 0x70664C)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
+
 
 ; check inv item 1 rendered
 Func _check_inv_1()
@@ -163,16 +178,7 @@ Func _check_inv_2()
 EndFunc
 
 
-; checks if bank is open
-Func _check_bank_open()
-	$check = 1
-	while $check
-		$check_item = PixelSearch(171, 148, 196, 168, 0x70664C)
-		If IsArray($check_item) Then
-			$check = 0
-		EndIf
-	WEnd
-EndFunc
+
 
 
 ; check for combine action
@@ -293,4 +299,13 @@ EndFunc
 ; exit out program
 Func _exit()
 	Exit(0)
+EndFunc
+
+
+; pause program
+Func _pause()
+	$pause = Not $pause
+
+	While $pause
+	WEnd
 EndFunc

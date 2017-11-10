@@ -4,6 +4,10 @@ WinActivate("OSBuddy")
 ; hot key to stop
 HotKeySet("{Esc}", "_exit")
 
+; hot key to pause
+HotKeySet("{`}", "_pause")
+$pause = False
+
 ; error tracker
 $error_count = 0
 
@@ -238,7 +242,7 @@ EndFunc
 Func _check_inv_1()
 	$check = 1
 	while $check
-		$check_item = PixelSearch(796, 867, 815, 885, 0x514209)
+		$check_item = PixelSearch(758, 761, 774, 772, 0x514209)
 		If IsArray($check_item) Then
 			$check = 0
 		EndIf
@@ -338,4 +342,13 @@ EndFunc
 ; exit out program
 Func _exit()
 	Exit(0)
+EndFunc
+
+
+; pause program
+Func _pause()
+	$pause = Not $pause
+
+	While $pause
+	WEnd
 EndFunc
