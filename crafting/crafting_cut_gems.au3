@@ -33,26 +33,17 @@ $deposit_top = 828
 $bs1_left = 170
 $bs1_top = 144
 
+; bank slot 2
+$bs2_left = 218
+$bs2_top = 144
 
+; inventory slot 1
+$is1_left = 752
+$is1_top = 752
 
-$c1 = 755
-$c2 = 795
-$c3 = 835
-$c4 = 875
-
-
-$r1 = 755
-$r2 = 790
-$r3 = 825
-$r4 = 860
-$r5 = 895
-$r6 = 930
-$r7 = 965
-
-
-
-
-
+; inventory slot 2
+$is2_left = 793
+$is2_top = 752
 
 
 
@@ -70,8 +61,8 @@ WEnd
 ; bank first
 ; 1 --> click banker
 ; 2 --> deposit items
-; 3 --> get 14 items from slot 1
-; 4 --> get 14 items from slot 2
+; 3 --> get 1 item from slot 1
+; 4 --> get 27 items from slot 2
 ; 5 --> close bank
 ; 6 --> click item 1
 ; 7 --> click item 2
@@ -94,131 +85,46 @@ Func _start()
 		; check if bank is open
 		_check_bank_open()
 
+
 		; deposit all items into the bank
 		_deposit_all()
 		_pause_action($veryshort)
 
-
-		; grab the string
-		_get_herbs()
+		; grab the chisel for cutting gems
+		_get_chisel()
 		_pause_action($veryshort)
 
-		; exit the bank to clean herbs
+		; grab the gem to be cut
+		_get_gems()
+		_pause_action($veryshort)
+
+		; exit the bank
 		_exit_bank()
 
-		; make sure the bank is closed
-		_check_bank_closed()
 
-		; make sure inventory item is rendered
+		; make sure bank is closed
+		_check_bank_closed()
+		_pause_action($veryshort)
+
+		; make sure our first inventory item is rendered
 		_check_inv_1()
 		_pause_action($veryshort)
 
-		; 1
-		_rand_click($left, $c1, $c1, $r1, $r1, 0, 20, 0, 20)
+		; select the first inventory item
+		_select_first()
+		_pause_action($veryshort)
 
-		; 2
-		_rand_click($left, $c2, $c2, $r1, $r1, 0, 20, 0, 20)
+		; make sure the second inventory item is rendered
+		_check_inv_2()
 
-		; 3
-		_rand_click($left, $c3, $c3, $r1, $r1, 0, 20, 0, 20)
+		; select second item in inventory
+		_select_second()
 
-		; 4
-		_rand_click($left, $c4, $c4, $r1, $r1, 0, 20, 0, 20)
-
-
-
-		; 8
-		_rand_click($left, $c4, $c4, $r2, $r2, 0, 20, 0, 20)
-
-		; 7
-		_rand_click($left, $c3, $c3, $r2, $r2, 0, 20, 0, 20)
-
-		; 6
-		_rand_click($left, $c2, $c2, $r2, $r2, 0, 20, 0, 20)
-
-		; 5
-		_rand_click($left, $c1, $c1, $r2, $r2, 0, 20, 0, 20)
-
-
-
-
-
-		; 9
-		_rand_click($left, $c1, $c1, $r3, $r3, 0, 20, 0, 20)
-
-		; 10
-		_rand_click($left, $c2, $c2, $r3, $r3, 0, 20, 0, 20)
-
-		; 11
-		_rand_click($left, $c3, $c3, $r3, $r3, 0, 20, 0, 20)
-
-		; 12
-		_rand_click($left, $c4, $c4, $r3, $r3, 0, 20, 0, 20)
-
-
-
-
-
-		; 16
-		_rand_click($left, $c4, $c4, $r4, $r4, 0, 20, 0, 20)
-
-		; 15
-		_rand_click($left, $c3, $c3, $r4, $r4, 0, 20, 0, 20)
-
-		; 14
-		_rand_click($left, $c2, $c2, $r4, $r4, 0, 20, 0, 20)
-
-		; 13
-		_rand_click($left, $c1, $c1, $r4, $r4, 0, 20, 0, 20)
-
-
-
-
-
-
-		; 17
-		_rand_click($left, $c1, $c1, $r5, $r5, 0, 20, 0, 20)
-
-		; 18
-		_rand_click($left, $c2, $c2, $r5, $r5, 0, 20, 0, 20)
-
-		; 19
-		_rand_click($left, $c3, $c3, $r5, $r5, 0, 20, 0, 20)
-
-		; 20
-		_rand_click($left, $c4, $c4, $r5, $r5, 0, 20, 0, 20)
-
-
-
-
-		; 24
-		_rand_click($left, $c4, $c4, $r6, $r6, 0, 20, 0, 20)
-
-		; 23
-		_rand_click($left, $c3, $c3, $r6, $r6, 0, 20, 0, 20)
-
-		; 22
-		_rand_click($left, $c2, $c2, $r6, $r6, 0, 20, 0, 20)
-
-		; 21
-		_rand_click($left, $c1, $c1, $r6, $r6, 0, 20, 0, 20)
-
-
-
-		; 25
-		_rand_click($left, $c1, $c1, $r7, $r7, 0, 20, 0, 20)
-
-		; 26
-		_rand_click($left, $c2, $c2, $r7, $r7, 0, 20, 0, 20)
-
-		; 27
-		_rand_click($left, $c3, $c3, $r7, $r7, 0, 20, 0, 20)
-
-		; 28
-		_rand_click($left, $c4, $c4, $r7, $r7, 0, 20, 0, 20)
-
-
-		_pause_action($short)
+		; check for combine action
+		_check_combine()
+		_pause_action($veryshort)
+		_combine()
+		_pause_action($make)
 	Else
 		; if error occurs 10 times then we exit
 		_increment_error()
@@ -226,39 +132,52 @@ Func _start()
 EndFunc
 
 
-; check bank closed
-Func _check_bank_closed()
+; check for combine action
+Func _check_combine()
 	$check = 1
 	while $check
-		$check_item = PixelSearch(288, 195, 405, 341, 0x574815)
+		$check_item = PixelSearch(248, 950, 286, 981, 0x38368D)
 		If IsArray($check_item) Then
 			$check = 0
 		EndIf
 	WEnd
 EndFunc
+
 
 
 ; check inv item 1 rendered
 Func _check_inv_1()
 	$check = 1
 	while $check
-		$check_item = PixelSearch(758, 761, 774, 772, 0x514209)
+		$check_item = PixelSearch(749, 755, 774, 774, 0x352400)
 		If IsArray($check_item) Then
 			$check = 0
 		EndIf
 	WEnd
 EndFunc
 
-; grabs X amount of herbs from the bank
-Func _get_herbs()
-	$rand_x = Random($bs1_left, $bs1_left+20, 1)
-	$rand_y = Random($bs1_top, $bs1_top+20, 1)
 
-	; right click to have grab many option
-	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
-	_pause_action($veryshort)
-	; left click to select X amount wanted
-	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
+; check inv item 2 rendered
+Func _check_inv_2()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(796, 759, 809, 775, 0x0F127B)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
+EndFunc
+
+
+; check bank closed
+Func _check_bank_closed()
+	$check = 1
+	while $check
+		$check_item = PixelSearch(354, 211, 491, 352, 0x4E4011)
+		If IsArray($check_item) Then
+			$check = 0
+		EndIf
+	WEnd
 EndFunc
 
 
@@ -266,11 +185,42 @@ EndFunc
 Func _check_bank_open()
 	$check = 1
 	while $check
-		$check_item = PixelSearch(171, 148, 196, 168, 0x514209)
+		$check_item = PixelSearch(171, 148, 196, 168, 0x563A09)
 		If IsArray($check_item) Then
 			$check = 0
 		EndIf
 	WEnd
+EndFunc
+
+
+; randomly selects the first item to combine with second
+Func _select_first()
+	_rand_click($left, $is1_left, $is1_left, $is1_top, $is1_top, 0, 20, 0, 20)
+EndFunc
+
+
+; randomly selects the second item to combine with first
+Func _select_second()
+	_rand_click($left, $is2_left, $is2_left, $is2_top, $is2_top, 0, 20, 0, 20)
+EndFunc
+
+
+; grabs the chisel from the bank
+Func _get_chisel()
+	_rand_click($left, $bs1_left, $bs1_left, $bs1_top, $bs1_top, 0, 20, 0, 20)
+EndFunc
+
+
+; grabs X amount of bows from the bank
+Func _get_gems()
+	$rand_x = Random($bs2_left, $bs2_left+20, 1)
+	$rand_y = Random($bs2_top, $bs2_top+20, 1)
+
+	; right click to have grab many option
+	_rand_click($right, $rand_x, $rand_x, $rand_y, $rand_y)
+	;_pause_action($veryshort)
+	; left click to select X amount wanted
+	_rand_click($left, $rand_x, $rand_x, $rand_y, $rand_y, -70, 70, 70, 76)
 EndFunc
 
 
@@ -328,7 +278,7 @@ Func _pause_action($length)
 	ElseIf $length = 3 Then
 		Sleep(Random(1050, 1100, 1))
 	Else
-		Sleep(Random(16800, 17300, 1))
+		Sleep(Random(33000, 33500, 1))
 	EndIf
 EndFunc
 
@@ -343,7 +293,6 @@ EndFunc
 Func _exit()
 	Exit(0)
 EndFunc
-
 
 ; pause program
 Func _pause()

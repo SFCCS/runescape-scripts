@@ -30,12 +30,13 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Strings any type of unstrung bows | 85 hours+   | 14 mil+           | Level 99 x1 |
+| Strings any type of unstrung bows | 160 hours+  | 26 Mil+           | Level 99 x2 |
 
 | Item             | Experience Rates |
 |------------------|------------------|
 | Maple Longbow (u)| ~130k exp/hr Avg |
 | Yew Longbow (u)  | ~185k exp/hr Avg |
+| Magic Longbow(u) | ~230k exp/hr Avg |
 
 ---
 
@@ -62,12 +63,12 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 ### Cooking - Making Unfermented Wines
 
-| Action                            | Time Tested  | Experience Gained | Achievements|
-|-----------------------------------|--------------|-------------------|-------------|
-| Combining grapes and jugs of water to make wines | 30 hours+ | 13 mil+ | Level 99 x1 |
+| Action                                           | Time Tested  | Experience Gained   | Achievements|
+|--------------------------------------------------|--------------|---------------------|-------------|
+| Combining grapes and jugs of water to make wines | 30 hours+    | 13 Mil+             | Level 99 x1 |
 
-| Item            | Experience Rates |
-|-----------------|------------------|
+| Item            | Experience Rates  |
+|-----------------|-------------------|
 | Unfermented Wine | ~421k exp/hr Avg |
 
 # Herblore
@@ -76,8 +77,28 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 8 hours+    | 550 k+            |             |
+| Cleaning herbs                    | 12 hours+   | 1.2 Mil+          |             |
 
+# Crafting
 
+### Crafting - Glassblowing Unpowered Orbs
 
+| Action       | Time Tested | Experience Gained   | Achievements|
+|--------------|-------------|---------------------|-------------|
+| Glassblowing | 4 hours+    | 400 K+              |             |
 
+| Item            | Experience Rates  |
+|-----------------|-------------------|
+| Unpowered Orbs  | ~95k exp/hr Avg   |
+
+---
+
+### Crafting - Cutting Gems
+
+| Action       | Time Tested  | Experience Gained   | Achievements|
+|--------------|--------------|---------------------|-------------|
+| Cutting gems | 1 hours+     | 150 K+              |             |
+
+| Item            | Experience Rates  |
+|-----------------|-------------------|
+| Uncut Sapphire  | ~120k exp/hr Avg |
