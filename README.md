@@ -77,7 +77,12 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 23 hours+   | 2.3 Mil+          |             |
+| Cleaning herbs                    | 20 hours+   | 2.7 Mil+          |             |
+
+| Item            | Experience Rates  |
+|-----------------|-------------------|
+| Grimy Irit      | ~133k exp/hr Avg  |
+| Grimy Torstol   | ~211k exp/hr Avg  |
 
 # Crafting
 
@@ -85,11 +90,12 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action       | Time Tested | Experience Gained   | Achievements|
 |--------------|-------------|---------------------|-------------|
-| Glassblowing | 30 hours+   | 3.5 Mil+            |             |
+| Glassblowing | 45 hours+   | 5 Mil+              |             |
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
 | Unpowered Orbs  | ~97k exp/hr Avg   |
+| Empty Light Orbs| ~130k exp/hr Avg  |
 
 ---
 
