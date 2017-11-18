@@ -77,7 +77,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 24 hours+   | 3 Mil+          |             |
+| Cleaning herbs                    | 24 hours+   | 3 Mil+            |             |
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
@@ -90,7 +90,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action       | Time Tested | Experience Gained   | Achievements|
 |--------------|-------------|---------------------|-------------|
-| Glassblowing | 60 hours+   | 7 Mil+              |             |
+| Glassblowing | 110 hours+  | 13 Mil+             | Level 99 x 1|
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
