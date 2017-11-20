@@ -111,4 +111,4 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 # Thieving
 
-
+# Fishing
