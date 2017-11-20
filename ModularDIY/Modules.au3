@@ -3,12 +3,31 @@ WinActivate("OSBuddy")
 
 
 
+
+
+
 ; hot key to stop
 HotKeySet("{Esc}", "_exit")
 ; exit out program
 Func _exit()
 	Exit(0)
 EndFunc
+
+
+
+
+
+; hot key to pause
+HotKeySet("{`}", "_pause")
+$pause = False
+; pause program
+Func _pause()
+	$pause = Not $pause
+
+	While $pause
+	WEnd
+EndFunc
+
 
 
 
@@ -31,6 +50,8 @@ EndFunc
 
 
 
+
+
 ; delay between actions
 Global $short = 1
 Global $medium = 2
@@ -50,6 +71,10 @@ Func _pause_action($length)
 	EndIf
 EndFunc
 
+
+
+
+
 ; check, maybe click
 Func _check($left, $top, $right, $bottom, $color)
 	$check = 1
@@ -60,6 +85,8 @@ Func _check($left, $top, $right, $bottom, $color)
 		EndIf
 	WEnd
 EndFunc
+
+
 
 
 
@@ -85,54 +112,3 @@ Func _pos($col, $row, $check=False, $color=0, $click=False, $mouse=$left)
 		_rand_click($mouse, $inv_c, $inv_r, $inv_c_r, $inv_r_b)
 	EndIf
 EndFunc
-
-
-
-;fishing spot left, top, right, bottom, color
-Global $fish_l = 545
-Global $fish_t = 770
-Global $fish_r = 705
-Global $fish_b = 1025
-Global $fish_c = 0x00FFFF
-
-; map spot left, top, right, bottom, color
-Global $map_l = 809
-Global $map_t = 90
-Global $map_r = 927
-Global $map_b = 164
-Global $map_c = 0x00FFFF
-
-; inventory item colors
-Global $herb = 0x095109
-Global $tar = 0x322E2E
-
-While 1
-	; check fishing spot
-	_check($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
-
-	; check tar
-	; then click
-	_pos(1, 1, True, $tar, True)
-
-	_pause_action($short)
-
-	; check herb
-	; then click
-	_pos(1, 2, True, $herb, True)
-
-	_pause_action($short)
-
-	; shift drop inv row 3 column 1
-	Send("{SHIFTDOWN}")
-	_pos(1, 3, False, 0, True)
-	_pause_action(2)
-	Send("{SHIFTUP}")
-
-	; click fishing spot
-	$fish = PixelSearch($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
-	If IsArray($fish) Then
-		_rand_click($left, $fish[0], $fish[1], $fish[0], $fish[1], 20, -20, 50, 30)
-	EndIf
-
-	_pause_action(3)
-WEnd
