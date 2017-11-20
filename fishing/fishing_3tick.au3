@@ -40,15 +40,6 @@ $ch2 = 825
 $ch3 = 708
 $ch4 = 946
 
-Func _map_move()
-	$check_map = PixelSearch($m1, $m2, $m3, $m4, $mc)
-	If IsArray($check_map) Then
-		$check_f = 0
-		_rand_click($left, $check_map[0], $check_map[0], $check_map[1], $check_map[1])
-		_pause_action($make)
-	EndIf
-EndFunc
-
 While 1
 	_check($ch1, $ch2, $ch3, $ch4, $check)
 	_rand_click($left, $c1, $c1, $r1, $r1, 0, 15, 0, 15)
