@@ -108,3 +108,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 | Item            | Experience Rates  |
 |-----------------|-------------------|
 | Uncut Sapphire  | ~120k exp/hr Avg |
+
+# Thieving
+
+
