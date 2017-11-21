@@ -1,8 +1,19 @@
 ; target window
 WinActivate("OSBuddy")
 
+; hot key to pause
+HotKeySet("{Home}", "_pause")
+$pause = False
+; pause program
+Func _pause()
+	$pause = Not $pause
+
+	While $pause
+	WEnd
+EndFunc
 
 
+; hot key to stop
 ; hot key to stop
 HotKeySet("{Esc}", "_exit")
 ; exit out program
@@ -18,7 +29,7 @@ Global $right = "RIGHT"
 ; random left click relative to a square area
 Func _rand_click($click, $left, $top, $right, $bottom, $l_offset=0, $t_offset=0, $r_offset=0, $b_offset=0)
 	; random click speed between 2-4
-	$normal_click_speed = Random(2, 4, 1)
+	$normal_click_speed = Random(2, 3, 1)
 
 	; rand x coord in box
 	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)
@@ -36,17 +47,20 @@ Global $short = 1
 Global $medium = 2
 Global $long = 3
 Global $walk = 4
+Global $walklong = 5
 ; determine which pause we want
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(80, 90, 1))
+		Sleep(Random(50, 60, 1))
 	ElseIf $length = 2 Then
-		Sleep(Random(210, 230, 1))
+		Sleep(Random(130, 140, 1))
 	ElseIf $length = 3 Then
-		Sleep(Random(950, 1000, 1))
+		Sleep(Random(800, 850, 1))
+	ElseIf $length = 4 Then
+		Sleep(Random(2000, 2500, 1))
 	Else
-		Sleep(Random(5300, 5500, 1))
+		Sleep(Random(6000, 6500, 1))
 	EndIf
 EndFunc
 
@@ -89,26 +103,49 @@ EndFunc
 
 
 ;fishing spot left, top, right, bottom, color
-Global $fish_l = 545
-Global $fish_t = 770
-Global $fish_r = 705
-Global $fish_b = 1025
+Global $fish_l = 161
+Global $fish_t = 229
+Global $fish_r = 711
+Global $fish_b = 930
 Global $fish_c = 0x00FFFF
 
 ; map spot left, top, right, bottom, color
 Global $map_l = 809
 Global $map_t = 90
 Global $map_r = 927
-Global $map_b = 164
+Global $map_b = 190
 Global $map_c = 0x00FFFF
 
 ; inventory item colors
 Global $herb = 0x095109
 Global $tar = 0x322E2E
 
+Global $try = True
+Func _map()
+	$new_spot = PixelSearch($map_l, $map_t, $map_r, $map_b, $map_c)
+	If IsArray($new_spot) Then
+		$try = True
+		_rand_click($left, $new_spot[0], $new_spot[1], $new_spot[0], $new_spot[1])
+	Else
+		If $try Then
+			$try = False
+			_rand_click($left, 905, 200, 905, 200)
+			_pause_action($walklong)
+			_map()
+		EndIf
+	EndIf
+EndFunc
+
 While 1
-	; check fishing spot
-	_check($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
+	; click fishing spot
+	$fish = PixelSearch($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
+	If IsArray($fish) Then
+	Else
+		_pause_action($long)
+		_map()
+		_check($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
+		_pause_action($walk)
+	EndIf
 
 	; check tar
 	; then click
@@ -131,7 +168,13 @@ While 1
 	; click fishing spot
 	$fish = PixelSearch($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
 	If IsArray($fish) Then
-		_rand_click($left, $fish[0], $fish[1], $fish[0], $fish[1], 20, -20, 50, 30)
+		_rand_click($left, $fish[0], $fish[1], $fish[0], $fish[1], 30, -30, 50, 40)
+	Else
+		_pos(-3, 3, False, 0, True)
+		_pause_action($long)
+		_map()
+		_check($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
+		_pause_action($walk)
 	EndIf
 
 	_pause_action(3)

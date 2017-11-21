@@ -75,7 +75,7 @@ EndFunc
 
 
 
-; check, maybe click
+; check if color we want is found
 Func _check($left, $top, $right, $bottom, $color)
 	$check = 1
 	while $check
@@ -97,10 +97,10 @@ Global $inv_c_r = 775
 Global $inv_r_b = 775
 
 ; to calculate (col pos) c1, c2, c3, and etc. (c# * 40 + 715)
-; to calculate (row pos) r1, r2, r3, and etc. (r# * 40 + 715)
+; to calculate (row pos) r1, r2, r3, and etc. (r# * 35 + 715)
 Func _pos($col, $row, $check=False, $color=0, $click=False, $mouse=$left)
 	$inv_c = ($col * 40) + 715
-	$inv_r = ($row * 40) + 715
+	$inv_r = ($row * 35) + 715
 	$inv_c_r = $inv_c + 15
 	$inv_r_b = $inv_r + 15
 
