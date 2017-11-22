@@ -52,9 +52,9 @@ Global $walklong = 5
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(50, 60, 1))
+		Sleep(Random(80, 90, 1))
 	ElseIf $length = 2 Then
-		Sleep(Random(130, 140, 1))
+		Sleep(Random(160, 170, 1))
 	ElseIf $length = 3 Then
 		Sleep(Random(800, 850, 1))
 	ElseIf $length = 4 Then
@@ -85,11 +85,23 @@ Global $inv_r_b = 775
 
 ; to calculate (col pos) c1, c2, c3, and etc. (c# * 40 + 715)
 ; to calculate (row pos) r1, r2, r3, and etc. (r# * 40 + 715)
-Func _pos($col, $row, $check=False, $color=0, $click=False, $mouse=$left)
+Func _pos($col, $row, $check=False, $color=0, $click=False, $mouse=$left, $herb=False)
 	$inv_c = ($col * 40) + 715
 	$inv_r = ($row * 40) + 715
 	$inv_c_r = $inv_c + 15
 	$inv_r_b = $inv_r + 15
+
+	If $herb Then
+		$check_herb = PixelSearch($inv_c, $inv_r, $inv_c_r, $inv_r_b, $color)
+		If Not IsArray($check_herb) Then
+			$check_inv = PixelSearch(755, 755, 917, 962, $color)
+			If IsArray($check_inv) Then
+				_rand_click($mouse, $check_inv[0], $check_inv[1], $check_inv[0], $check_inv[1], 0, 0, 20, 20)
+				_pause_action(2)
+				MouseClickDrag($left, $check_inv[0], $check_inv[1], $inv_c, $inv_r)
+			EndIf
+		EndIf
+	EndIf
 
 	If $check Then
 		_check($inv_c, $inv_r, $inv_c_r, $inv_r_b, $color)
@@ -136,6 +148,7 @@ Func _map()
 	EndIf
 EndFunc
 
+
 While 1
 	; click fishing spot
 	$fish = PixelSearch($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
@@ -146,6 +159,9 @@ While 1
 		_check($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
 		_pause_action($walk)
 	EndIf
+
+	; if herb missing, use a new herb
+	_pos(1, 2, False, $herb, False, $left, True)
 
 	; check tar
 	; then click
@@ -168,7 +184,7 @@ While 1
 	; click fishing spot
 	$fish = PixelSearch($fish_l, $fish_t, $fish_r, $fish_b, $fish_c)
 	If IsArray($fish) Then
-		_rand_click($left, $fish[0], $fish[1], $fish[0], $fish[1], 30, -30, 50, 40)
+		_rand_click($left, $fish[0], $fish[1], $fish[0], $fish[1], -10, -10, 40, 40)
 	Else
 		_pos(-3, 3, False, 0, True)
 		_pause_action($long)
