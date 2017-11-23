@@ -57,7 +57,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                                                     | Time Tested | Experience Gained |
 |------------------------------------------------------------|-------------|-------------------|
-| Combines feathers and arrow shafts to make headless arrows | 3 hours+    | 70,000+           |
+| Combines feathers and arrow shafts to make headless arrows | 3 hours+    | 70 K+             |
 
 # Cooking
 
@@ -111,4 +111,25 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 # Thieving
 
+### Thieving - Stealing items from stalls
+
+| Action               | Time Tested  | Experience Gained   | Achievements|
+|----------------------|--------------|---------------------|-------------|
+| Stealing from stalls | 20 hours+    | 600 K+              |             |
+
+| Item            | Experience Rates  |
+|-----------------|-------------------|
+| Fruit Stalls    | ~34.5k exp/hr Avg |
+
 # Fishing
+
+### Fishing - 3 tick fishing
+
+| Action                        | Time Tested  | Experience Gained   | Achievements|
+|-------------------------------|--------------|---------------------|-------------|
+| 3 tick fishing any location   | 30 hours+    | 3 Mil+              |             |
+
+| Item             | Experience Rates  |
+|------------------|-------------------|
+| Fly Fishing      | ~85k exp/hr Avg   |
+| Barbarian Fishing| ~95k exp/hr Avg   |

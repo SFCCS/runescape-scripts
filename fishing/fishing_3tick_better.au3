@@ -52,11 +52,11 @@ Global $walklong = 5
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(80, 90, 1))
+		Sleep(Random(40, 50, 1))
 	ElseIf $length = 2 Then
 		Sleep(Random(160, 170, 1))
 	ElseIf $length = 3 Then
-		Sleep(Random(800, 850, 1))
+		Sleep(Random(850, 870, 1))
 	ElseIf $length = 4 Then
 		Sleep(Random(2000, 2500, 1))
 	Else
@@ -96,8 +96,8 @@ Func _pos($col, $row, $check=False, $color=0, $click=False, $mouse=$left, $herb=
 		If Not IsArray($check_herb) Then
 			$check_inv = PixelSearch(755, 755, 917, 962, $color)
 			If IsArray($check_inv) Then
-				_rand_click($mouse, $check_inv[0], $check_inv[1], $check_inv[0], $check_inv[1], 0, 0, 20, 20)
-				_pause_action(2)
+				_rand_click($mouse, $check_inv[0], $check_inv[1], $check_inv[0], $check_inv[1])
+				Sleep(1500)
 				MouseClickDrag($left, $check_inv[0], $check_inv[1], $inv_c, $inv_r)
 			EndIf
 		EndIf
@@ -130,6 +130,7 @@ Global $map_c = 0x00FFFF
 
 ; inventory item colors
 Global $herb = 0x095109
+Global $herbuncleaned = 0x6D580D
 Global $tar = 0x322E2E
 
 Global $try = True
