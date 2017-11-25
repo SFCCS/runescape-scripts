@@ -52,11 +52,11 @@ Global $walklong = 5
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(40, 50, 1))
+		Sleep(Random(20, 30, 1))
 	ElseIf $length = 2 Then
-		Sleep(Random(160, 170, 1))
+		Sleep(Random(180, 190, 1))
 	ElseIf $length = 3 Then
-		Sleep(Random(850, 870, 1))
+		Sleep(Random(950, 970, 1))
 	ElseIf $length = 4 Then
 		Sleep(Random(2000, 2500, 1))
 	Else
