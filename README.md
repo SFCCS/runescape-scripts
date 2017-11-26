@@ -127,7 +127,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                        | Time Tested  | Experience Gained   | Achievements|
 |-------------------------------|--------------|---------------------|-------------|
-| 3 tick fishing any location   | 30 hours+    | 3 Mil+              |             |
+| 3 tick fishing any location   | 70 hours+    | 7 Mil+              |             |
 
 | Item             | Experience Rates  |
 |------------------|-------------------|

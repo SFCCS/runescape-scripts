@@ -52,11 +52,11 @@ Global $walklong = 5
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(20, 30, 1))
+		Sleep(Random(40, 50, 1))
 	ElseIf $length = 2 Then
-		Sleep(Random(180, 190, 1))
+		Sleep(Random(160, 170, 1))
 	ElseIf $length = 3 Then
-		Sleep(Random(950, 970, 1))
+		Sleep(Random(850, 870, 1))
 	ElseIf $length = 4 Then
 		Sleep(Random(2000, 2500, 1))
 	Else
@@ -124,7 +124,7 @@ Global $fish_c = 0x00FFFF
 ; map spot left, top, right, bottom, color
 Global $map_l = 809
 Global $map_t = 90
-Global $map_r = 927
+Global $map_r = 909
 Global $map_b = 190
 Global $map_c = 0x00FFFF
 
