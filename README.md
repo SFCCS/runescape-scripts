@@ -77,10 +77,11 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 24 hours+   | 3 Mil+            |             |
+| Cleaning herbs                    | 33 hours+   | 4.5 Mil+          |             |
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
+| Grimy Guam      | ~45k exp/hr Avg   |
 | Grimy Irit      | ~133k exp/hr Avg  |
 | Grimy Torstol   | ~211k exp/hr Avg  |
 
@@ -127,9 +128,9 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                        | Time Tested  | Experience Gained   | Achievements|
 |-------------------------------|--------------|---------------------|-------------|
-| 3 tick fishing any location   | 70 hours+    | 7 Mil+              |             |
+| 3 tick fishing any location   | 85 hours+    | 8 Mil+              |             |
 
-| Item             | Experience Rates  |
-|------------------|-------------------|
-| Fly Fishing      | ~85k exp/hr Avg   |
-| Barbarian Fishing| ~95k exp/hr Avg   |
+| Item             | Experience Rates   |
+|------------------|--------------------|
+| Fly Fishing      | ~85k exp/hr Avg    |
+| Barbarian Fishing| ~100k exp/hr avg   |
