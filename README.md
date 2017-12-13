@@ -30,7 +30,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Strings any type of unstrung bows | 160 hours+  | 26 Mil+           | Level 99 x2 |
+| Strings any type of unstrung bows | 200 hours+  | 29 Mil+           | Level 99 x2 |
 
 | Item             | Experience Rates |
 |------------------|------------------|
@@ -77,13 +77,14 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Cleaning herbs                    | 33 hours+   | 4.5 Mil+          |             |
+| Cleaning herbs                    | 80 hours+   | 13 Mil+           | Level 99 x1 |
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
 | Grimy Guam      | ~45k exp/hr Avg   |
 | Grimy Irit      | ~133k exp/hr Avg  |
-| Grimy Torstol   | ~211k exp/hr Avg  |
+| Grimy Torstol   | ~250k exp/hr Avg  |
+| Super Combat    | ~290k exp/hr Avg  |
 
 # Crafting
 
@@ -116,7 +117,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action               | Time Tested  | Experience Gained   | Achievements|
 |----------------------|--------------|---------------------|-------------|
-| Stealing from stalls | 20 hours+    | 600 K+              |             |
+| Stealing from stalls | 40 hours+    | 1.2 Mil+            |             |
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
@@ -128,9 +129,9 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                        | Time Tested  | Experience Gained   | Achievements|
 |-------------------------------|--------------|---------------------|-------------|
-| 3 tick fishing any location   | 150 hours+   | 13 Mil+             | Level 99 x 1|
+| 3 tick fishing any location   | 190 hours+   | 17 Mil+             | Level 99 x 1|
 
 | Item             | Experience Rates   |
 |------------------|--------------------|
 | Fly Fishing      | ~85k exp/hr Avg    |
-| Barbarian Fishing| ~100k exp/hr avg   |
+| Barbarian Fishing| ~105k exp/hr avg   |
