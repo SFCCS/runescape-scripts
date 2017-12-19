@@ -30,7 +30,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Strings any type of unstrung bows | 200 hours+  | 29 Mil+           | Level 99 x2 |
+| Strings any type of unstrung bows | 270 hours+  | 60 Mil+           | Level 99 x2 |
 
 | Item             | Experience Rates |
 |------------------|------------------|
@@ -135,3 +135,15 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 |------------------|--------------------|
 | Fly Fishing      | ~85k exp/hr Avg    |
 | Barbarian Fishing| ~105k exp/hr avg   |
+
+# Mining
+
+### Mining - Power Mining
+
+| Action       | Time Tested  | Experience Gained   | Achievements|
+|--------------|--------------|---------------------|-------------|
+| Power Mining | 10 hours+    | 450 K+              |             |
+
+| Item      | Experience Rates|
+|-----------|-----------------|
+| Iron Ore  | ~54k exp/hr Avg |

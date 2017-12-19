@@ -29,7 +29,7 @@ Global $right = "RIGHT"
 ; random left click relative to a square area
 Func _rand_click($click, $left, $top, $right, $bottom, $l_offset=0, $t_offset=0, $r_offset=0, $b_offset=0)
 	; random click speed between 2-4
-	$normal_click_speed = Random(2, 3, 1)
+	$normal_click_speed = Random(2, 2, 1)
 
 	; rand x coord in box
 	$rand_x = Random($left+$l_offset, $right+$r_offset, 1)
@@ -52,13 +52,13 @@ Global $walklong = 5
 Func _pause_action($length)
 	; delay between actions
 	If $length = 1 Then
-		Sleep(Random(100, 200, 1))
+		Sleep(Random(100, 150, 1))
 	ElseIf $length = 2 Then
-		Sleep(Random(780, 890, 1))
+		Sleep(Random(2000, 2100, 1))
 	ElseIf $length = 3 Then
-		Sleep(Random(5050, 6070, 1))
+		Sleep(Random(3050, 3070, 1))
 	ElseIf $length = 4 Then
-		Sleep(Random(2000, 2500, 1))
+		Sleep(Random(400, 550, 1))
 	Else
 		Sleep(Random(6000, 6500, 1))
 	EndIf
@@ -99,37 +99,79 @@ EndFunc
 
 
 
-$ore = 0x543426
-$1l = 249
-$1t = 369
-$1r = 380
-$1b = 461
+$ore1l = 469
+$ore1t = 810
+$ore1r = 585
+$ore1b = 910
 
-$2l = 628
-$2t = 362
-$2r = 758
-$2b = 479
+$ore2l = 197
+$ore2t = 802
+$ore2r = 289
+$ore2b = 893
 
-$noore = 0x353030
+$ore2lc = 400
+$ore2tc = 795
+$ore2rc = 493
+$ore2bc = 882
 
-$first = True
+$ore3l = 396
+$ore3t = 301
+$ore3r = 497
+$ore3b = 404
+
+$ore4l = 895
+$ore4t = 522
+$ore4r = 937
+$ore4b = 578
+
+$ore4lc = 724
+$ore4tc = 521
+$ore4rc = 829
+$ore4bc = 636
+
+$ore = 0x2E1D15
+$noore = 0x282626
+
+Send("{SHIFTDOWN}")
 
 While 1
-	If $first Then
-		_check($1l, $1r, $1r, $1b, $ore)
-		_rand_click($left, $1l, $1t, $1r, $1b)
-		$first = False
-		_check($1l, $1r, $1r, $1b, $noore)
-	Else
-		_check($2l, $2t, $2r, $2b, $ore)
-		_rand_click($left, $2l, $2t, $2r, $2b)
-		$first = True
-		_check($2l, $2r, $2r, $2b, $noore)
-	EndIf
-	_pause_action(2)
-	; shift drop inv row 2 column 1
 	Send("{SHIFTDOWN}")
+	_check($ore1l, $ore1t, $ore1r, $ore1b, $ore)
+	_rand_click($left, $ore1l, $ore1t, $ore1r, $ore1b)
+	_check($ore1l, $ore1t, $ore1r, $ore1b, $noore)
+
 	_pos(1, 2, True)
+	_pause_action(1)
+	_pos(2, 2, True)
+	_pause_action(1)
+	_pos(3, 2, True)
+	_pause_action(1)
+	_pos(4, 2, True)
+
+	_pause_action(1)
 	Send("{SHIFTUP}")
 	_pause_action(1)
+
+	_pos(1, 1, True)
+	_pause_action(1)
+	_pos(2, 1, True)
+
+	_check($ore1l, $ore2t, $ore2r, $ore2b, $ore)
+	_rand_click($left, $ore2l, $ore2t, $ore2r, $ore2b)
+	_pause_action(2)
+	_check($ore1l, $ore2tc, $ore2rc, $ore2bc, $noore)
+
+	_check($ore3l, $ore3t, $ore3r, $ore3b, $ore)
+	_rand_click($left, $ore3l, $ore3t, $ore3r, $ore3b)
+	_check($ore3l, $ore3t, $ore3r, $ore3b, $noore)
+
+	_pos(1, 1, True)
+	_pause_action(1)
+	_pos(2, 1, True)
+
+
+	_check($ore4l, $ore4t, $ore4r, $ore4b, $ore)
+	_rand_click($left, $ore4l, $ore4t, $ore4r, $ore4b)
+	_pause_action(2)
+	_check($ore4lc, $ore4tc, $ore4rc, $ore4bc, $noore)
 WEnd
