@@ -147,3 +147,25 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 | Item      | Experience Rates|
 |-----------|-----------------|
 | Iron Ore  | ~54k exp/hr Avg |
+
+# Magic
+
+### Magic - Stun Alching
+
+| Action       | Time Tested  | Experience Gained   | Achievements|
+|--------------|--------------|---------------------|-------------|
+| Stun Alching | 70 hours+    | 12 Mil+             | Level 99 x 1|
+
+| Item      | Experience Rates|
+|-----------|-----------------|
+| Stun Alch | ~186k exp/hr Avg|
+
+### Magic - Alching
+
+| Action       | Time Tested  | Experience Gained   | Achievements|
+|--------------|--------------|---------------------|-------------|
+| Alching      | 12 hours+    | 1 Mil+              |             |
+
+| Item      | Experience Rates|
+|-----------|-----------------|
+| Alch      | ~78k exp/hr Avg|
