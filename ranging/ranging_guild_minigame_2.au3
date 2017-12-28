@@ -10,6 +10,15 @@ Func _exit()
 EndFunc
 
 
+Global $slow = False
+; hot key to toggle slowdown
+HotKeySet("{=}", "_slowdown")
+; slowdown program
+Func _slowdown()
+	$slow = Not $slow
+EndFunc
+
+
 ; hot key to pause
 HotKeySet("{Home}", "_pause")
 $pause = False
@@ -137,8 +146,11 @@ While 1
 		If $i < 11 Then
 			_check($t_x, $t_y, $t_x, $t_y, $target2)
 			_pause_action(1)
-			;Send("{Esc}")
-			;_pause_action(3)
+
+			If $slow Then
+				Send("{Esc}")
+				_pause_action(3)
+			EndIf
 		EndIf
 	Next
 
