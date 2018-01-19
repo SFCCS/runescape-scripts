@@ -30,7 +30,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Strings any type of unstrung bows | 270 hours+  | 60 Mil+           | Level 99 x2 |
+| Strings any type of unstrung bows | 270 hours+  | 80 Mil+           | Level 99 x2 |
 
 | Item             | Experience Rates |
 |------------------|------------------|
@@ -169,3 +169,15 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 | Item      | Experience Rates|
 |-----------|-----------------|
 | Alch      | ~78k exp/hr Avg|
+
+# Ranging
+
+### Ranging - Ranging Guild
+
+| Action       | Time Tested  | Experience Gained   | Achievements|
+|--------------|--------------|---------------------|-------------|
+| Shooting Target | 270 hours+    | 13 Mil+             | Level 99 x 1|
+
+| Item      | Experience Rates|
+|-----------|-----------------|
+| Shooting Target | ~50k exp/hr Avg|
