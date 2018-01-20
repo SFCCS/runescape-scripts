@@ -30,7 +30,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Strings any type of unstrung bows | 270 hours+  | 80 Mil+           | Level 99 x2 |
+| Strings any type of unstrung bows | 370 hours+  | 80 Mil+           | Level 99 x2 |
 
 | Item             | Experience Rates |
 |------------------|------------------|
@@ -154,7 +154,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action       | Time Tested  | Experience Gained   | Achievements|
 |--------------|--------------|---------------------|-------------|
-| Stun Alching | 70 hours+    | 12 Mil+             | Level 99 x 1|
+| Stun Alching | 70 hours+    | 13 Mil+             | Level 99 x 1|
 
 | Item      | Experience Rates|
 |-----------|-----------------|
