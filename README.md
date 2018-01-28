@@ -30,7 +30,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                            | Time Tested | Experience Gained | Achievements|
 |-----------------------------------|-------------|-------------------|-------------|
-| Strings any type of unstrung bows | 370 hours+  | 80 Mil+           | Level 99 x2 |
+| Strings any type of unstrung bows | 465 hours+  | 100 Mil+          | Level 99 x2 |
 
 | Item             | Experience Rates |
 |------------------|------------------|
@@ -117,7 +117,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action               | Time Tested  | Experience Gained   | Achievements|
 |----------------------|--------------|---------------------|-------------|
-| Stealing from stalls | 40 hours+    | 1.2 Mil+            |             |
+| Stealing from stalls | 79 hours+    | 2.5 Mil+            |             |
 
 | Item            | Experience Rates  |
 |-----------------|-------------------|
@@ -129,7 +129,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action                        | Time Tested  | Experience Gained   | Achievements|
 |-------------------------------|--------------|---------------------|-------------|
-| 3 tick fishing any location   | 190 hours+   | 17 Mil+             | Level 99 x 1|
+| 3 tick fishing any location   | 220 hours+   | 20 Mil+             | Level 99 x 1|
 
 | Item             | Experience Rates   |
 |------------------|--------------------|
@@ -142,7 +142,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action       | Time Tested  | Experience Gained   | Achievements|
 |--------------|--------------|---------------------|-------------|
-| Power Mining | 10 hours+    | 450 K+              |             |
+| Power Mining | 30 hours+    | 1 Mil+              |             |
 
 | Item      | Experience Rates|
 |-----------|-----------------|
@@ -164,7 +164,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action       | Time Tested  | Experience Gained   | Achievements|
 |--------------|--------------|---------------------|-------------|
-| Alching      | 12 hours+    | 1 Mil+              |             |
+| Alching      | 346 hours+    | 27 Mil+            | Level 99 x 2|
 
 | Item      | Experience Rates|
 |-----------|-----------------|
@@ -181,3 +181,16 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 | Item      | Experience Rates|
 |-----------|-----------------|
 | Shooting Target | ~50k exp/hr Avg|
+
+
+# Smithing
+
+### Smithing - Cannonballs
+
+| Action       | Time Tested  | Experience Gained   | Achievements|
+|--------------|--------------|---------------------|-------------|
+| Cannonballs  | 42 hours+    | 500 K+             |             |
+
+| Item      | Experience Rates|
+|-----------|-----------------|
+| Cannonball | ~14k exp/hr Avg|
