@@ -189,7 +189,7 @@ A combination of both my interested: RuneScape and automation. My attempt in cre
 
 | Action       | Time Tested  | Experience Gained   | Achievements|
 |--------------|--------------|---------------------|-------------|
-| Cannonballs  | 42 hours+    | 500 K+             |             |
+| Cannonballs  | 250 hours+   | 3 Mil+              |             |
 
 | Item      | Experience Rates|
 |-----------|-----------------|
